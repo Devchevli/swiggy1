@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:swiggy/view/utils/config/app_images.dart';
 
+import 'Third_Screen.dart';
+
 class Second_Screen extends StatefulWidget {
   const Second_Screen({super.key});
 
@@ -23,20 +25,22 @@ class _Second_ScreenState extends State<Second_Screen> {
                 fit: BoxFit.cover,
                 opacity: .5)),
         child: Container(
-          margin: EdgeInsets.only(left: 25, bottom: 25, right: 25),
-          child: const Column(
+          margin: const EdgeInsets.only(left: 25, bottom: 25, right: 25),
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 "Swiggy",
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 43,
                     fontWeight: FontWeight.w700),
               ),
-              SizedBox(height: 15,),
-              Row(
+              const SizedBox(
+                height: 15,
+              ),
+              const Row(
                 children: [
                   Text(
                     "Food",
@@ -83,11 +87,30 @@ class _Second_ScreenState extends State<Second_Screen> {
                   ),
                 ],
               ),
-              SizedBox(height: 15),
-              Divider(
+              const SizedBox(height: 15),
+              const Divider(
                 color: Colors.white,
                 height: 13,
                 thickness: 2,
+              ),
+              const Text(
+                "Order from top restaurants",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                    fontWeight: FontWeight.w300),
+              ),
+              const SizedBox(height: 15),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Third_Screen()));
+                },
+                style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all(Colors.deepOrange),
+                    fixedSize: MaterialStateProperty.all(const Size(400, 45))),
+                child:
+                    const Text("Get Started", style: TextStyle(fontSize: 17)),
               )
             ],
           ),

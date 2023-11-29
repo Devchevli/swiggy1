@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:swiggy/practical/widgets/Splash_Screen/splash_Screen.dart';
+import 'package:swiggy/practical/widgets/Third_Screen.dart';
 import 'package:swiggy/practical/widgets/second_Screen.dart';
 
 void main() {
