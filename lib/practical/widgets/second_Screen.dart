@@ -111,7 +111,7 @@ class _Second_ScreenState extends State<Second_Screen> {
                     fixedSize: MaterialStateProperty.all(const Size(400, 45))),
                 child:
                     const Text("Get Started", style: TextStyle(fontSize: 17)),
-              )
+              ),
             ],
           ),
         ),

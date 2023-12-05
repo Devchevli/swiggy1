@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'OTP_Screen.dart';
+
 class Third_Screen extends StatefulWidget {
   const Third_Screen({super.key});
 
@@ -8,6 +10,7 @@ class Third_Screen extends StatefulWidget {
 }
 
 class _Third_ScreenState extends State<Third_Screen> {
+  int navigate=10;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -22,7 +25,7 @@ class _Third_ScreenState extends State<Third_Screen> {
         elevation: 0,
       ),
       body: Container(
-        margin: const EdgeInsets.only(left: 25, top: 25),
+        padding: const EdgeInsets.only(left: 25, top: 25, right: 25),
         color: Colors.white,
         height: size.height,
         width: size.width,
@@ -35,30 +38,50 @@ class _Third_ScreenState extends State<Third_Screen> {
             height: 25,
           ),
           TextField(
+            keyboardType: TextInputType.number,
+            maxLength: 10,
             onTap: () {},
             cursorColor: Colors.black54,
             style: const TextStyle(fontWeight: FontWeight.w400),
             decoration: InputDecoration(
+              prefix: Text("+91   |     ",
+                  style: TextStyle(fontWeight: FontWeight.w600)),
               border: InputBorder.none,
               labelText: "Mobile Number",
               labelStyle: const TextStyle(
                   color: Colors.deepOrange,
                   fontWeight: FontWeight.w600,
                   fontSize: 20),
-              enabledBorder: UnderlineInputBorder(
+              enabledBorder:OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
-                borderSide: const BorderSide(color: Colors.transparent),
+                borderSide:
+                const BorderSide(color: Colors.deepOrangeAccent),
               ),
               hintText: 'Enter your phone number',
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide(color: Colors.deepOrangeAccent),
+                borderSide: const BorderSide(color: Colors.deepOrangeAccent),
               ),
               hintStyle: const TextStyle(fontSize: 16, color: Colors.black54),
               contentPadding:
                   const EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
             ),
           ),
+          const SizedBox(
+            height: 25,
+          ),
+          ElevatedButton(
+            onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=> OTP_Screen() ));},
+            style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.deepOrange),
+                fixedSize: MaterialStateProperty.all(const Size(400, 45))),
+            child: const Text("Get OTP", style: TextStyle(fontSize: 17)),
+          ),
+          const SizedBox(
+            height: 25,
+          ),
+          const Text(
+              "By clicking.I accept the terms of service and privacy policy")
         ]),
       ),
     );
