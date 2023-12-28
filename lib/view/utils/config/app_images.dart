@@ -19,4 +19,23 @@ class AppImages {
       "https://media.istockphoto.com/id/174813048/photo/spoon-fork-and-table-knife-on-dinner-plate.jpg?s=170667a&w=0&k=20&c=FCv_h1EQf0CjYOpBXbavZAaD2peqJ0m8cSfQz2QP9Lk=";
   static const GiftBox = "https://static.vecteezy.com/system/resources/previews/014/301/042/original/3d-open-gift-box-surprise-give-as-a-gift-during-special-festival-png.png";
   static const Dhokla = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZwIS1yE1jjbnzjaT_ZcdO8K_-vUDKB9cTDA&usqp=CAU";
+  static const Samosa = "https://images.pexels.com/photos/4449068/pexels-photo-4449068.jpeg?auto=compress&cs=tinysrgb&w=1600";
+  static const Sandwich = "https://images.pexels.com/photos/1209029/pexels-photo-1209029.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+  static const Dosa = "https://images.pexels.com/photos/5560763/pexels-photo-5560763.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+  static const Cakes = "https://images.pexels.com/photos/806363/pexels-photo-806363.jpeg?auto=compress&cs=tinysrgb&w=1600";
+  static const Idli = "https://images.pexels.com/photos/4331491/pexels-photo-4331491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+  static const Chole_Bhature = "https://static.toiimg.com/thumb/53314156.cms?width=1200&height=900";
+  static const Tea = "https://medicaldialogues.in/h-upload/2022/12/15/720x1280_193835-amp-background-image-91.jpg";
+  static const Paratha = "https://images.pexels.com/photos/12737919/pexels-photo-12737919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+  static const Poha = "https://images.pexels.com/photos/13063292/pexels-photo-13063292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+  static const Coffee = "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+  static const Poori = "https://www.indianhealthyrecipes.com/wp-content/uploads/2020/12/poori-puri-recipe.jpg";
+  static const Kachori = "https://media.istockphoto.com/id/1768400273/photo/indian-popular-snacks-plate-dry-kachori-and-methi-mathri-made-using-maida-flour-a-spicy-mix.jpg?b=1&s=612x612&w=0&k=20&c=Nkx7gTuC-5i2pEiequDu2_fL_z7Kx1Cjymjz94zwI0w=";
+  static const Vada = "https://media.istockphoto.com/id/1292631226/photo/indian-fried-snack-medu-vada-with-sambar-and-coconut-chutney-in-plate-on-rustic-wooden.jpg?b=1&s=612x612&w=0&k=20&c=Cpn_K7eoy8H4ikU3CrkiqsY0KpIJ1MSCeJAEaNvClQU=";
+  static const Khichdi = "https://images.pexels.com/photos/6363499/pexels-photo-6363499.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+  static const Thepla = "https://cdn.tarladalal.com/members/9306/big/big_methi_thepla,_gujarati_methi_thepla_recipe-14510.jpg";
+  static const Salad = "https://images.pexels.com/photos/1059905/pexels-photo-1059905.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+  static const Uttapam = "https://cdn2.foodviva.com/static-content/food-images/south-indian-recipes/uttapam/uttapam.jpg";
+  static const Omelet = "https://kristineskitchenblog.com/wp-content/uploads/2023/02/how-to-make-an-omelet-17.jpg";
+  static const Upma = "https://www.thedeliciouscrescent.com/wp-content/uploads/2016/05/Vegetable-Upma-7.jpg";
 }
