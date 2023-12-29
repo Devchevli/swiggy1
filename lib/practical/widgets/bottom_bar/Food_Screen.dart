@@ -166,10 +166,12 @@ class _Food_ScreenState extends State<Food_Screen> {
                         unselectedLabelColor: Colors.black,
                         labelColor: Colors.black,
                         indicatorSize: TabBarIndicatorSize.tab,
-                        indicatorPadding: const EdgeInsets.symmetric(horizontal: 20),
+                        indicatorPadding:
+                            const EdgeInsets.symmetric(horizontal: 10),
                         indicator: BoxDecoration(
                           border: Border.all(),
-                          borderRadius: const BorderRadius.all(Radius.circular(25)),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(25)),
                         ),
                         isScrollable: true,
                         tabs: [
@@ -180,14 +182,13 @@ class _Food_ScreenState extends State<Food_Screen> {
                                 border: Border.all(
                               color: Colors.transparent,
                             )),
-                            child: const Row(
+                            child: Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Tab(
                                   text: "Filter",
                                 ),
-                                Icon(Icons.menu)
                               ],
                             ),
                           ),
@@ -198,8 +199,85 @@ class _Food_ScreenState extends State<Food_Screen> {
                                 border: Border.all(
                               color: Colors.transparent,
                             )),
-                            child: const Tab(
-                              text: "Sort by",
+                            child: Row(
+                              children: [
+                                InkWell(
+                                  onTap: () {
+                                    showMenu(
+                                        context: context,
+                                        position: RelativeRect.fromLTRB(
+                                            60, 600, 60, 60),
+                                        items: [
+                                          const PopupMenuItem(
+                                            child: Row(
+                                              children: [
+                                                Text(
+                                                  "Relevance (Default)",
+                                                  style:
+                                                      TextStyle(fontSize: 17),
+                                                ),
+                                                SizedBox(
+                                                  width: 10,
+                                                ),
+
+
+                                              ],
+                                            ),
+                                          ),
+                                          const PopupMenuItem(
+                                            child: Row(
+                                              children: [
+                                                Text("Delivery Time"),
+                                                SizedBox(
+                                                  width: 10,
+                                                ),
+                                                // Radio(
+                                                //     value: 1,
+                                                //     groupValue: 1,
+                                                //     onChanged: (value) {}),
+                                              ],
+                                            ),
+                                          ),
+                                          const PopupMenuItem(
+                                            child: Row(
+                                              children: [
+                                                Text("Rating"),
+                                                SizedBox(
+                                                  width: 10,
+                                                ),
+
+                                              ],
+                                            ),
+                                          ),
+                                          const PopupMenuItem(
+                                            child: Row(
+                                              children: [
+                                                Text("Cost: Low to High"),
+                                                SizedBox(
+                                                  width: 10,
+                                                ),
+
+                                              ],
+                                            ),
+                                          ),
+                                          const PopupMenuItem(
+                                            child: Row(
+                                              children: [
+                                                Text("Cost: High Low to"),
+                                                SizedBox(
+                                                  width: 10,
+                                                ),
+
+                                              ],
+                                            ),
+                                          ),
+                                        ]);
+                                  },
+                                  child: const Tab(
+                                    text: "Sort by",
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                           Container(
@@ -213,7 +291,7 @@ class _Food_ScreenState extends State<Food_Screen> {
                               text: "Fast Delivery",
                             ),
                           ),
-                          Container(
+                          SizedBox(
                             height: size.width / 10,
                             width: size.width / 5,
                             child: const Tab(
@@ -231,13 +309,23 @@ class _Food_ScreenState extends State<Food_Screen> {
                               text: "New on Swiggy",
                             ),
                           ),
-                         
                         ])
                   ],
                 ),
+                Column(children: [
+                  Container(height: 250,width: 350,color: Colors.black,)
+                ]),
+
               ],
+
             ),
           ),
-        ));
+
+
+        ),
+
+    );
+
+
   }
 }

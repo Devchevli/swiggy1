@@ -26,11 +26,15 @@ class _Home_ScreenState extends State<Home_Screen> {
               leading: const Icon(CupertinoIcons.location_fill,
                   color: Colors.deepOrange),
               actions: [
-                ClipOval(
-                  child: Container(
-                    width: size.width / 7,
-                    color: Colors.grey,
-                    child: const Icon(Icons.person),
+                Padding(
+                  padding: const EdgeInsets.only(right: 20),
+                  child: ClipOval(
+                    child: Container(
+                      height: size.height/18,
+                      width: size.width / 7,
+                      color: Colors.grey,
+                      child: const Icon(Icons.person),
+                    ),
                   ),
                 ),
               ],
