@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:swiggy/models/Dishes_Model.dart';
 import 'package:swiggy/practical/widgets/Constant_Variable.dart';
 import 'package:swiggy/view/utils/config/app_images.dart';
+import 'package:swiggy/view/utils/widgets/common_widgets/list_view_model.dart';
+
+import 'Instamart_Screen.dart';
 
 class Food_Screen extends StatefulWidget {
   const Food_Screen({super.key});
@@ -16,19 +19,20 @@ class _Food_ScreenState extends State<Food_Screen> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return DefaultTabController(
-        length: 5,
-        child: Scaffold(
-          appBar: AppBar(
-            elevation: 0,
-            backgroundColor: Colors.white,
-            leading: const Icon(CupertinoIcons.location_fill,
-                color: Colors.deepOrange),
-            title:
-                const Text("location", style: TextStyle(color: Colors.black)),
-          ),
-          body: SizedBox(
-            height: size.height,
-            width: size.width,
+      length: 5,
+      child: Scaffold(
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.white,
+          leading: const Icon(CupertinoIcons.location_fill,
+              color: Colors.deepOrange),
+          title: const Text("location", style: TextStyle(color: Colors.black)),
+        ),
+        body: SizedBox(
+          height: size.height,
+          width: size.width,
+          child: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
             child: Column(
               children: [
                 Container(
@@ -182,7 +186,7 @@ class _Food_ScreenState extends State<Food_Screen> {
                                 border: Border.all(
                               color: Colors.transparent,
                             )),
-                            child: Row(
+                            child: const Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
@@ -205,7 +209,7 @@ class _Food_ScreenState extends State<Food_Screen> {
                                   onTap: () {
                                     showMenu(
                                         context: context,
-                                        position: RelativeRect.fromLTRB(
+                                        position: const RelativeRect.fromLTRB(
                                             60, 600, 60, 60),
                                         items: [
                                           const PopupMenuItem(
@@ -219,8 +223,6 @@ class _Food_ScreenState extends State<Food_Screen> {
                                                 SizedBox(
                                                   width: 10,
                                                 ),
-
-
                                               ],
                                             ),
                                           ),
@@ -245,7 +247,6 @@ class _Food_ScreenState extends State<Food_Screen> {
                                                 SizedBox(
                                                   width: 10,
                                                 ),
-
                                               ],
                                             ),
                                           ),
@@ -256,7 +257,6 @@ class _Food_ScreenState extends State<Food_Screen> {
                                                 SizedBox(
                                                   width: 10,
                                                 ),
-
                                               ],
                                             ),
                                           ),
@@ -267,7 +267,6 @@ class _Food_ScreenState extends State<Food_Screen> {
                                                 SizedBox(
                                                   width: 10,
                                                 ),
-
                                               ],
                                             ),
                                           ),
@@ -309,23 +308,86 @@ class _Food_ScreenState extends State<Food_Screen> {
                               text: "New on Swiggy",
                             ),
                           ),
-                        ])
+                        ]),
+                    SizedBox(
+                      height: size.height / 50,
+                    )
                   ],
                 ),
-                Column(children: [
-                  Container(height: 250,width: 350,color: Colors.black,)
-                ]),
+                Column(
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.only(left: 25),
+                      child: Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          "To many restaurant to explore",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 20),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 250,
+                      width: size.width/1.1,
+                      child: ListView.builder(
+                          itemCount: 3,
+                          itemBuilder: (BuildContext context, int index) {
+                            return Padding(
+                              padding: const EdgeInsets.only(bottom: 10),
+                              child: Container(
+                                height: size.height/5,
+                                width: size.width,
+                                alignment: Alignment.center,
+                                color: Colors.black,
 
+                                child: ListTile(
+                                  leading: Container(
+                                    height: size.height,
+                                    width: size.width/4,
+                                    child: Container(
+                                      width: 60,
+                                      height: 500,
+                                      decoration: BoxDecoration(
+                                        color: Colors.redAccent,
+
+                                        image: DecorationImage(
+                                          image: NetworkImage(
+                                              details[index].image),
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  title: Text(
+                                    details[index].title,
+                                    style: const TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                  subtitle: Text(
+                                    details[index].subtitle,
+                                    style:
+                                        const TextStyle(color: Colors.black),
+                                  ),
+                                  trailing: const Icon(
+                                      Icons.next_plan_outlined,
+                                      color: Colors.white70,
+                                      size: 25),
+                                ),
+                              ),
+                            );
+                          }),
+                    )
+                  ],
+                ),
               ],
-
             ),
           ),
-
-
         ),
-
+      ),
     );
-
-
   }
 }
