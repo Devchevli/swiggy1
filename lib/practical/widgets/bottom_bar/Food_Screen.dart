@@ -334,6 +334,7 @@ class _Food_ScreenState extends State<Food_Screen> {
                       width: size.width/1.1,
                       child: ListView.builder(
                           itemCount: 3,
+                          itemExtent: 100,
                           itemBuilder: (BuildContext context, int index) {
                             return Padding(
                               padding: const EdgeInsets.only(bottom: 10),
@@ -342,7 +343,6 @@ class _Food_ScreenState extends State<Food_Screen> {
                                 width: size.width,
                                 alignment: Alignment.center,
                                 color: Colors.black,
-
                                 child: ListTile(
                                   leading: Container(
                                     height: size.height,
@@ -352,7 +352,6 @@ class _Food_ScreenState extends State<Food_Screen> {
                                       height: 500,
                                       decoration: BoxDecoration(
                                         color: Colors.redAccent,
-
                                         image: DecorationImage(
                                           image: NetworkImage(
                                               details[index].image),
