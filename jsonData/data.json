@@ -1,0 +1,73 @@
+[
+  {
+    "image": "https://logo.com/image-cdn/images/kts928pd/production/d46e9751ab0c6e97a5f8d63fa4020492af4c5381-1140x620.png?w=1080&q=72",
+    "discount": "",
+    "Upto": "",
+    "restratype":"",
+    "title": "Subway",
+    "Rating": "4.6(5K+).15-20 mins",
+    "items" : "Fast Food, Health Food ,Salads",
+    "Location": "Adajan Gam . 0.4 km"
+  },
+  {
+    "image": "https://www.mcdonalds.com.my/images/welcome/mcd_foods_m.jpg?id=d28f4a25e5359fc09877",
+    "discount": "60% OFF",
+    "Upto": "₹120",
+    "restratype":"",
+    "title": "McDonald's",
+    "Rating": "4.4(10K+).15-20 mins",
+    "items" : "Burgers,Beverages,Cafe,Desserts",
+    "Location": "Adajan Gam . 0.4 km"
+  },
+  {
+    "image": "https://i.pinimg.com/564x/07/bd/d2/07bdd2143a08cace584643357384b6d2.jpg",
+    "discount": "50% OFF",
+    "Upto": "₹100",
+    "restratype":"",
+    "title": "Starbucks",
+    "Rating": "4.8(20K+).2-3 mins",
+    "items" : "Desserts,Chiness,North Indian",
+    "Location": "Adajan Gam . 0.9 km"
+  },
+  {
+    "image": "https://i.pinimg.com/564x/c8/52/6f/c8526f705258413077591d7f5f55f53c.jpg",
+    "discount": "50% OFF",
+    "Upto": "₹100",
+    "restratype":"",
+    "title": "Baskin Robbins",
+    "Rating": "4.6(5K+).10-15 mins",
+    "items" : "Beverages,Cafe,Snacks",
+    "Location": "Adajan 0.1"
+  },
+  {
+    "image": "https://b.zmtcdn.com/data/pictures/chains/4/34044/ed1e8ad1b2db4eaf7e1081ac7c4b4351.jpg",
+    "discount": "10% OFF",
+    "Upto": "₹100",
+    "restratype":"",
+    "title": "Kailash Sweets",
+    "Rating": "4.8(5K+).10-15 mins",
+    "items" : "Sweets,Desserts,Fast Food",
+    "Location": "Rajhans Point . 7.8 km"
+  },
+  {
+    "image": "https://i.pinimg.com/564x/c9/05/8b/c9058b09aae4fe3cd4ba7ea3112c3a03.jpg",
+    "discount": "",
+    "Upto": "",
+    "restratype":"Non-veg",
+    "title": "Daarji's",
+    "Rating": "4.2(1.5K+).20-25 mins",
+    "items" : "Tikka,Biryani,Kabab",
+    "Location": "kargil chowk .6 km"
+  },
+  {
+    "image": "https://i.pinimg.com/564x/2c/d7/ea/2cd7ea6040d6b609add634d256696ab6.jpg",
+    "discount": "",
+    "Upto": "",
+    "restratype":"Pure veg",
+    "title": "The Belgian Waffle Co",
+    "Rating": "4(1.5K+).25-30 mins",
+    "items" : "Desserts",
+    "Location": "Vesu Main Road 12 km"
+  }
+
+]

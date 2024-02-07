@@ -1,10 +1,15 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' as rootBundle;
+
 import 'package:swiggy/models/Dishes_Model.dart';
 import 'package:swiggy/practical/widgets/Constant_Variable.dart';
 import 'package:swiggy/view/utils/config/app_images.dart';
 import 'package:swiggy/view/utils/widgets/common_widgets/list_view_model.dart';
 
+import '../../../models/modelData.dart';
 import 'Instamart_Screen.dart';
 
 class Food_Screen extends StatefulWidget {
@@ -12,6 +17,12 @@ class Food_Screen extends StatefulWidget {
 
   @override
   State<Food_Screen> createState() => _Food_ScreenState();
+}
+Future<List<ModelData>> data () async
+{
+  final jsonData = await rootBundle.rootBundle.loadString("jsonData/data.json");
+  final List = json.decode(jsonData) ;
+  return List.map((e)=>ModelData.fromJson(e) ).toList();
 }
 
 class _Food_ScreenState extends State<Food_Screen> {
@@ -89,7 +100,7 @@ class _Food_ScreenState extends State<Food_Screen> {
                         width: 5,
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(right: 25),
+                        padding: const EdgeInsets.only(right: 10),
                         child: Container(
                           height: size.height / 6,
                           width: size.width / 4,
@@ -137,7 +148,7 @@ class _Food_ScreenState extends State<Food_Screen> {
                             const SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 2,
                                 mainAxisSpacing: 0,
-                                crossAxisSpacing: 10,
+                                crossAxisSpacing: 8,
                                 childAspectRatio: .9),
                         itemBuilder: (BuildContext context, int index) {
                           return Padding(
