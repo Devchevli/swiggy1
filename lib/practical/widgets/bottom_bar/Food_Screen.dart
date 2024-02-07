@@ -321,7 +321,7 @@ class _Food_ScreenState extends State<Food_Screen> {
                             width: size.width / 5,
                             child: const Tab(
                               text: "Cuisines",
-                            ),
+                            ),//
                           ),
                           Container(
                             height: size.width / 10,
