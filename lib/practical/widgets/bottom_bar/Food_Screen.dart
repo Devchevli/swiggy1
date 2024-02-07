@@ -350,7 +350,7 @@ class _Food_ScreenState extends State<Food_Screen> {
                           "To many restaurant to explore",
                           style: TextStyle(
                               color: Colors.black,
-                              fontWeight: FontWeight.w500,
+                              fontWeight: FontWeight.w500,  //
                               fontSize: 20),
                         ),
                       ),
