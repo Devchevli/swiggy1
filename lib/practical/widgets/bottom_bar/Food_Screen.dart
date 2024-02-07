@@ -1,11 +1,14 @@
+import 'dart:convert';
+import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' as rootBundle;
 import 'package:swiggy/models/Dishes_Model.dart';
 import 'package:swiggy/practical/widgets/Constant_Variable.dart';
 import 'package:swiggy/view/utils/config/app_images.dart';
 import 'package:swiggy/view/utils/widgets/common_widgets/list_view_model.dart';
 
-import 'Instamart_Screen.dart';
+import '../../../models/modelData.dart';
 
 class Food_Screen extends StatefulWidget {
   const Food_Screen({super.key});
@@ -15,9 +18,32 @@ class Food_Screen extends StatefulWidget {
 }
 
 class _Food_ScreenState extends State<Food_Screen> {
+  List<ModelData> dataList = [];
+
+  @override
+  void initState() {
+    super.initState();
+    loadData();
+  }
+
+  Future<void> loadData() async {
+    try {
+      String jsonString = await rootBundle.rootBundle.loadString(
+          "jsonData/data.json");
+      List<dynamic> jsonList = json.decode(jsonString);
+      setState(() {
+        dataList = jsonList.map((json) => ModelData.fromJson(json)).toList();
+      });
+    } catch (e) {
+      log("Eroor loading json data: $e");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    final size = MediaQuery
+        .of(context)
+        .size;
     return DefaultTabController(
       length: 5,
       child: Scaffold(
@@ -89,7 +115,7 @@ class _Food_ScreenState extends State<Food_Screen> {
                         width: 5,
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(right: 25),
+                        padding: const EdgeInsets.only(right: 10),
                         child: Container(
                           height: size.height / 6,
                           width: size.width / 4,
@@ -137,7 +163,7 @@ class _Food_ScreenState extends State<Food_Screen> {
                             const SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 2,
                                 mainAxisSpacing: 0,
-                                crossAxisSpacing: 10,
+                                crossAxisSpacing: 8,
                                 childAspectRatio: .9),
                         itemBuilder: (BuildContext context, int index) {
                           return Padding(
@@ -333,43 +359,42 @@ class _Food_ScreenState extends State<Food_Screen> {
                       height: 250,
                       width: size.width/1.1,
                       child: ListView.builder(
-                          itemCount: 3,
-                          itemExtent: 100,
-                          itemBuilder: (BuildContext context, int index) {
+                        itemCount: dataList.length,
+                        itemExtent: 250,
+                        itemBuilder: (BuildContext context, int index) {
+                          if (index < dataList.length) {
                             return Padding(
                               padding: const EdgeInsets.only(bottom: 10),
                               child: Container(
-                                height: size.height/5,
+                                height: 250,
                                 width: size.width,
                                 alignment: Alignment.center,
                                 color: Colors.black,
                                 child: ListTile(
+                                  contentPadding: EdgeInsets.all(10),
                                   leading: Container(
-                                    height: size.height,
-                                    width: size.width/4,
-                                    child: Container(
-                                      width: 60,
-                                      height: 500,
-                                      decoration: BoxDecoration(
-                                        color: Colors.redAccent,
-                                        image: DecorationImage(
-                                          image: NetworkImage(
-                                              details[index].image),
-                                          fit: BoxFit.cover,
+                                    width: size.width/2.7,
+                                    height: 230,
+                                    decoration: BoxDecoration(
+                                      color: Colors.redAccent,
+                                      image: DecorationImage(
+                                        image: NetworkImage(
+                                          dataList[index].image!,
                                         ),
+                                        fit: BoxFit.cover,
                                       ),
                                     ),
                                   ),
                                   title: Text(
-                                    details[index].title,
+                                    dataList[index].title!,
                                     style: const TextStyle(
                                         color: Colors.black,
                                         fontWeight: FontWeight.w600),
                                   ),
                                   subtitle: Text(
-                                    details[index].subtitle,
+                                    dataList[index].location!,
                                     style:
-                                        const TextStyle(color: Colors.black),
+                                    const TextStyle(color: Colors.black),
                                   ),
                                   trailing: const Icon(
                                       Icons.next_plan_outlined,
@@ -378,7 +403,13 @@ class _Food_ScreenState extends State<Food_Screen> {
                                 ),
                               ),
                             );
-                          }),
+                          } else {
+                            return Container();
+                          }
+                        },
+                      ),
+
+
                     )
                   ],
                 ),
@@ -388,5 +419,5 @@ class _Food_ScreenState extends State<Food_Screen> {
         ),
       ),
     );
+    }
   }
-}

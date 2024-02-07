@@ -7,6 +7,8 @@ import 'package:swiggy/practical/widgets/Third_Screen.dart';
 import 'package:swiggy/practical/widgets/Confirm_Details_Pages.dart';
 import 'package:swiggy/practical/widgets/Welcome_Pages.dart';
 import 'package:swiggy/practical/widgets/bottom_bar/Bottom_NavigationBar.dart';
+import 'package:swiggy/practical/widgets/bottom_bar/Food_Screen.dart';
+import 'package:swiggy/practical/widgets/bottom_bar/Genie_Screen.dart';
 import 'package:swiggy/practical/widgets/bottom_bar/Home_Screen.dart';
 import 'package:swiggy/practical/widgets/location.dart';
 import 'package:swiggy/practical/widgets/second_Screen.dart';
@@ -30,7 +32,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Bottom_NavigationBar_Screen(),
+      home: Food_Screen(),
 
     );
   }

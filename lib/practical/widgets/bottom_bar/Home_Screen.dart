@@ -194,7 +194,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                           children: [
                             Container(
                               height: size.height / 8,
-                              width: size.width / 3,
+                              width: size.width / 3.5,
                               decoration: const BoxDecoration(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(25)),
@@ -288,7 +288,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                           children: [
                             Container(
                               height: size.height / 8,
-                              width: size.width / 3,
+                              width: size.width / 3.5,
                               decoration: const BoxDecoration(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(25)),

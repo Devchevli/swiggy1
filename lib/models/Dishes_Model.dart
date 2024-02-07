@@ -29,11 +29,4 @@ List<DishesModel> DishesPic = [
   DishesModel(background: AppImages.Omelet, Text: 'Omelet'),
   DishesModel(background: AppImages.Upma, Text: 'Upma'),
   DishesModel(background: AppImages.Poori, Text: 'Poori'),
-
-
-
-
-
-
-
 ];
