@@ -360,8 +360,10 @@ class _Food_ScreenState extends State<Food_Screen> {
                           children: [
                             Container(
                               child: Padding(
-                                padding: const EdgeInsets.only(top: 130),
+                                padding: const EdgeInsets.only(left: 2,bottom: 5),
                                 child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
                                     Text(
                                       dataList[index].discount!,
@@ -371,11 +373,11 @@ class _Food_ScreenState extends State<Food_Screen> {
                                           color: Colors.white),
                                     ),
                                     Text(
-                                      dataList[index].discount!,
+                                      dataList[index].upto!,
                                       style: TextStyle(
-                                          fontSize: 23,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.white),
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w800,
+                                          color: Colors.white70),
                                     ),
                                   ],
                                 ),
@@ -392,7 +394,7 @@ class _Food_ScreenState extends State<Food_Screen> {
                                 image: DecorationImage(
                                     image: NetworkImage(
                                       dataList[index].image!,
-                                    ),
+                                    ),opacity: .8,
                                     fit: BoxFit.cover),
                                 borderRadius: BorderRadius.circular(10),
                               ),
@@ -402,11 +404,18 @@ class _Food_ScreenState extends State<Food_Screen> {
                               child: Column(
                                 children: [
                                   Text(
+                                    dataList[index].restratype!,
+                                    style: const TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                  Text(
                                     dataList[index].title!,
                                     style: const TextStyle(
                                         color: Colors.black,
                                         fontWeight: FontWeight.w600),
                                   ),
+
                                 ],
                               ),
                             )

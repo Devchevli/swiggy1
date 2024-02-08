@@ -1,8 +1,8 @@
 [
   {
     "image": "https://imageproxy.wolt.com/venue/5af574adb1dbc5000d1ddff0/c3548730-8d6a-11eb-9d21-fe374d38a0cc_____.png",
-    "discount": "",
-    "Upto": "",
+    "discount": "60% OFF",
+    "Upto": "upto ₹300",
     "restratype":"",
     "title": "Subway",
     "Rating": "4.6(5K+).15-20 mins",
@@ -12,7 +12,7 @@
   {
     "image": "https://www.mcdonalds.com.my/images/welcome/mcd_foods_m.jpg?id=d28f4a25e5359fc09877",
     "discount": "60% OFF",
-    "Upto": "₹120",
+    "Upto": "upto ₹120",
     "restratype":"",
     "title": "McDonald's",
     "Rating": "4.4(10K+).15-20 mins",
@@ -22,8 +22,8 @@
   {
     "image": "https://i.pinimg.com/564x/8b/33/74/8b337423b331e3c97fbaf342405ffca3.jpg",
     "discount": "50% OFF",
-    "Upto": "₹100",
-    "restratype":"",
+    "Upto": "upto ₹100",
+    "restratype":"Pure veg",
     "title": "Starbucks",
     "Rating": "4.8(20K+).2-3 mins",
     "items" : "Desserts,Chiness,North Indian",
@@ -32,8 +32,8 @@
   {
     "image": "https://i.pinimg.com/564x/c8/52/6f/c8526f705258413077591d7f5f55f53c.jpg",
     "discount": "50% OFF",
-    "Upto": "₹100",
-    "restratype":"",
+    "Upto": "upto ₹100",
+    "restratype":"Pure veg",
     "title": "Baskin Robbins",
     "Rating": "4.6(5K+).10-15 mins",
     "items" : "Beverages,Cafe,Snacks",
@@ -42,7 +42,7 @@
   {
     "image": "https://b.zmtcdn.com/data/pictures/chains/4/34044/ed1e8ad1b2db4eaf7e1081ac7c4b4351.jpg",
     "discount": "10% OFF",
-    "Upto": "₹100",
+    "Upto": "upto ₹100",
     "restratype":"",
     "title": "Kailash Sweets",
     "Rating": "4.8(5K+).10-15 mins",
