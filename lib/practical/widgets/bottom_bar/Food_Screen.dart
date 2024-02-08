@@ -359,29 +359,6 @@ class _Food_ScreenState extends State<Food_Screen> {
                         child: Row(
                           children: [
                             Container(
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 2,bottom: 5),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    Text(
-                                      dataList[index].discount!,
-                                      style: TextStyle(
-                                          fontSize: 23,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.white),
-                                    ),
-                                    Text(
-                                      dataList[index].upto!,
-                                      style: TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.w800,
-                                          color: Colors.white70),
-                                    ),
-                                  ],
-                                ),
-                              ),
                               height: size.height / 4.9,
                               width: size.width / 2.7,
                               decoration: BoxDecoration(
@@ -398,6 +375,29 @@ class _Food_ScreenState extends State<Food_Screen> {
                                     fit: BoxFit.cover),
                                 borderRadius: BorderRadius.circular(10),
                               ),
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 2,bottom: 5),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      dataList[index].discount!,
+                                      style: const TextStyle(
+                                          fontSize: 23,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white),
+                                    ),
+                                    Text(
+                                      dataList[index].upto!,
+                                      style: const TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w800,
+                                          color: Colors.white70),
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
@@ -411,6 +411,25 @@ class _Food_ScreenState extends State<Food_Screen> {
                                   ),
                                   Text(
                                     dataList[index].title!,
+                                    style: const TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                  Text(
+                                    dataList[index].rating!,
+                                    style: const TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                  Text(
+                                    dataList[index].items!,
+                                    style: const TextStyle(
+
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                  Text(
+                                    dataList[index].location!,
                                     style: const TextStyle(
                                         color: Colors.black,
                                         fontWeight: FontWeight.w600),
