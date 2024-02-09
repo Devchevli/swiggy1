@@ -1,6 +1,11 @@
 import 'package:swiggy/practical/widgets/bottom_bar/Home_Screen.dart';
 
 class AppImages {
+  static const dineout = "https://mir-s3-cdn-cf.behance.net/projects/404/943eea180458587.Y3JvcCwyMDYyLDE2MTIsMCwxODg.png";
+  static const hdfcBank = "https://m.economictimes.com/thumb/msid-101293561,width-600,resizemode-4/hdfc-bank-share-price-live-27-jun-2023.jpg";
+  static const americanExpress = "https://edupaat.com/wp-content/uploads/2023/09/American_Express-4876c7d0db694256968485f3085dfa78.png";
+  static const simpl = "https://www.financialexpress.com/wp-content/uploads/2023/06/Meme-35.jpg?w=350";
+  static const foodgif = "https://cdn.dribbble.com/users/3614071/screenshots/14256113/media/d563580022901c58eed441948ff1d0c0.gif";
   static const logo =
       "https://logos-world.net/wp-content/uploads/2020/11/Swiggy-Logo.png";
   static const SecondScreenPic =

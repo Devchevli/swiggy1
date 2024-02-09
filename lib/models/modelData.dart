@@ -7,6 +7,7 @@ class ModelData {
   String? rating;
   String? items;
   String? location;
+  String? Hotel;
 
   ModelData(
       {this.image,
@@ -16,7 +17,7 @@ class ModelData {
         this.title,
         this.rating,
         this.items,
-        this.location});
+        this.location,this.Hotel});
 
   ModelData.fromJson(Map<String, dynamic> json) {
     image = json['image'];
@@ -27,6 +28,7 @@ class ModelData {
     rating = json['Rating'];
     items = json['items'];
     location = json['Location'];
+    Hotel = json['Hotel'];
   }
 
   Map<String, dynamic> toJson() {
@@ -39,6 +41,7 @@ class ModelData {
     data['Rating'] = this.rating;
     data['items'] = this.items;
     data['Location'] = this.location;
+    data['Hotel'] = this.Hotel;
     return data;
   }
 }
