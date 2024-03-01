@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import '../../../view/utils/config/app_images.dart';
 import '../Constant_Variable.dart';
@@ -24,7 +25,6 @@ class Dineout_Screen extends StatefulWidget {
     AppImages.Paratha,
     AppImages.Paratha,
     AppImages.Paratha,
-
   ];
 
   @override
@@ -116,16 +116,23 @@ class _Dineout_ScreenState extends State<Dineout_Screen> {
                     ),
                   ),
                   const SizedBox(height: 25),
-                  Container(
-                    height: size.height / 4,
-                    width: size.width / 1.1,
-                    decoration: const BoxDecoration(
-                      image: DecorationImage(
-                          image: NetworkImage(AppImages.dineout),
-                          fit: BoxFit.cover),
-                      borderRadius: BorderRadius.all(Radius.circular(30)),
-                      color: Color(0xffFFEEE6),
-                    ),
+                  TweenAnimationBuilder(
+                    tween: Tween<double>(begin: 0.00,end: 1),
+                    duration: Duration(seconds: 3),
+                    builder: (BuildContext context, double value,  child) {
+                      return Opacity(opacity: value,
+                        child: Container(
+                        height: size.height / 4,
+                        width: size.width / 1.1,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                              image: NetworkImage(AppImages.dineout),
+                              fit: BoxFit.cover),
+                          borderRadius: BorderRadius.all(Radius.circular(30)),
+                          color: Color(0xffFFEEE6),
+                        ),
+                      ),);
+                    },
                   ),
                   SizedBox(
                     height: 20,
@@ -225,22 +232,29 @@ class _Dineout_ScreenState extends State<Dineout_Screen> {
                   SizedBox(
                     height: 250,
                   ),
-                  Text("To Many restraunt to explore",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
+                  Text(
+                    "To Many restraunt to explore",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                  ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
-                        width: size.width/1.1, // Expand to fill the available width
-                        color: Colors.transparent, // Adjust color as needed
+                        width: size.width / 1.1,
+                        // Expand to fill the available width
+                        color: Colors.transparent,
+                        // Adjust color as needed
                         child: CarouselSlider(
                           items: [
-                            for (int index = 0; index < widget.hotel.length; index++)
+                            for (int index = 0;
+                                index < widget.hotel.length;
+                                index++)
                               Container(
-                                width: size.width, // Adjust width of the carousel item
+                                width: size.width,
+                                // Adjust width of the carousel item
                                 child: Row(
                                   children: [
-
                                     const SizedBox(
                                       width: 20,
                                     ),
@@ -255,14 +269,13 @@ class _Dineout_ScreenState extends State<Dineout_Screen> {
                               setState(() {});
                             },
                             viewportFraction: 1,
-                            height: size.height / 2.9, // Adjust height of the carousel
+                            height: size.height / 2.9,
+                            // Adjust height of the carousel
                             autoPlay: true,
                             enlargeCenterPage: true,
                           ),
                         ),
                       ),
-
-
                     ],
                   )
                 ],

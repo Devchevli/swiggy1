@@ -13,8 +13,6 @@ import 'package:swiggy/practical/widgets/bottom_bar/Home_Screen.dart';
 import 'package:swiggy/practical/widgets/location.dart';
 import 'package:swiggy/practical/widgets/second_Screen.dart';
 
-import 'demo/app_bottom.dart';
-
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences pref=await SharedPreferences.getInstance();
