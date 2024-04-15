@@ -371,12 +371,14 @@ class _Food_ScreenState extends State<Food_Screen> {
                                 image: DecorationImage(
                                     image: NetworkImage(
                                       dataList[index].image!,
-                                    ),opacity: .8,
+                                    ),
+                                    opacity: .8,
                                     fit: BoxFit.cover),
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.only(left: 2,bottom: 5),
+                                padding:
+                                    const EdgeInsets.only(left: 2, bottom: 5),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.end,
@@ -402,6 +404,7 @@ class _Food_ScreenState extends State<Food_Screen> {
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
                                     dataList[index].restratype!,
@@ -409,11 +412,16 @@ class _Food_ScreenState extends State<Food_Screen> {
                                         color: Colors.black,
                                         fontWeight: FontWeight.w600),
                                   ),
-                                  Text(
-                                    dataList[index].title!,
-                                    style: const TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w600),
+                                  Container(
+                                    width: 220,
+                                    child: Text(
+                                      dataList[index].title!,
+                                      overflow: TextOverflow.ellipsis,
+                                      style: const TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.w800,
+                                          fontSize: 23),
+                                    ),
                                   ),
                                   Text(
                                     dataList[index].rating!,
@@ -424,7 +432,6 @@ class _Food_ScreenState extends State<Food_Screen> {
                                   Text(
                                     dataList[index].items!,
                                     style: const TextStyle(
-
                                         color: Colors.black,
                                         fontWeight: FontWeight.w600),
                                   ),
@@ -434,7 +441,6 @@ class _Food_ScreenState extends State<Food_Screen> {
                                         color: Colors.black,
                                         fontWeight: FontWeight.w600),
                                   ),
-
                                 ],
                               ),
                             )
