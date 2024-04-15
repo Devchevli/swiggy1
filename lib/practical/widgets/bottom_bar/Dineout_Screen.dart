@@ -1,8 +1,10 @@
+import 'dart:math';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-
+import 'package:swiggy/view/utils/widgets/common_widgets/carousal_list.dart';
+import 'package:swiggy/view/utils/widgets/common_widgets/list_view_model.dart';
 import '../../../view/utils/config/app_images.dart';
 import '../Constant_Variable.dart';
 
@@ -39,7 +41,7 @@ class _Dineout_ScreenState extends State<Dineout_Screen> {
     final size = MediaQuery.of(context).size;
     return DefaultTabController(
       initialIndex: 1,
-      length: 4,
+      length: 2,
       child: Scaffold(
         body: CustomScrollView(
           scrollBehavior: const MaterialScrollBehavior(),
@@ -117,21 +119,23 @@ class _Dineout_ScreenState extends State<Dineout_Screen> {
                   ),
                   const SizedBox(height: 25),
                   TweenAnimationBuilder(
-                    tween: Tween<double>(begin: 0.00,end: 1),
+                    tween: Tween<double>(begin: 0.00, end: 1),
                     duration: Duration(seconds: 3),
-                    builder: (BuildContext context, double value,  child) {
-                      return Opacity(opacity: value,
+                    builder: (BuildContext context, double value, child) {
+                      return Opacity(
+                        opacity: value,
                         child: Container(
-                        height: size.height / 4,
-                        width: size.width / 1.1,
-                        decoration: const BoxDecoration(
-                          image: DecorationImage(
-                              image: NetworkImage(AppImages.dineout),
-                              fit: BoxFit.cover),
-                          borderRadius: BorderRadius.all(Radius.circular(30)),
-                          color: Color(0xffFFEEE6),
+                          height: size.height / 4,
+                          width: size.width / 1.1,
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                                image: NetworkImage(AppImages.dineout),
+                                fit: BoxFit.cover),
+                            borderRadius: BorderRadius.all(Radius.circular(30)),
+                            color: Color(0xffFFEEE6),
+                          ),
                         ),
-                      ),);
+                      );
                     },
                   ),
                   SizedBox(
@@ -174,8 +178,8 @@ class _Dineout_ScreenState extends State<Dineout_Screen> {
                   SizedBox(
                     height: size.height / 50,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 20),
                     child: Align(
                         alignment: Alignment.topLeft,
                         child: Text(
@@ -184,7 +188,7 @@ class _Dineout_ScreenState extends State<Dineout_Screen> {
                               fontWeight: FontWeight.bold, fontSize: 13),
                         )),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 25,
                   ),
                   TabBar(
@@ -198,17 +202,17 @@ class _Dineout_ScreenState extends State<Dineout_Screen> {
                     ),
                     isScrollable: true,
                     tabs: [
-                      Container(
-                        height: size.width / 20,
-                        width: size.width / 2.5,
-                        decoration: BoxDecoration(
-                            border: Border.all(
-                          color: Colors.transparent,
-                        )),
-                        child: const Tab(
-                          text: "Iconic Place @ GIRF ",
-                        ),
-                      ),
+                      // Container(
+                      //   height: size.width / 20,
+                      //   width: size.width / 2.5,
+                      //   decoration: BoxDecoration(
+                      //       border: Border.all(
+                      //     color: Colors.transparent,
+                      //   )),
+                      //   child: const Tab(
+                      //     text: "Iconic Place @ GIRF ",
+                      //   ),
+                      // ),
                       Container(
                         height: size.width / 10,
                         width: size.width / 2.5,
@@ -217,7 +221,7 @@ class _Dineout_ScreenState extends State<Dineout_Screen> {
                           color: Colors.transparent,
                         )),
                         child: const Tab(
-                          text: "Trending Restraunt",
+                          text: "Trending Restaurant",
                         ),
                       ),
                       SizedBox(
@@ -229,54 +233,228 @@ class _Dineout_ScreenState extends State<Dineout_Screen> {
                       ),
                     ],
                   ),
-                  SizedBox(
-                    height: 250,
+                  const SizedBox(
+                    height: 20,
                   ),
-                  Text(
-                    "To Many restraunt to explore",
+                  SizedBox(
+                    height: 350,
+                    child: TabBarView(
+                      children: [
+                        ListView.builder(
+                          // trending restaurant
+                          scrollDirection: Axis.horizontal,
+                          itemCount: details.length,
+                          itemBuilder: (context, index) {
+                            return Stack(
+                              children: [
+                                Container(
+                                  width: 380,
+                                  margin: const EdgeInsets.all(5),
+                                  foregroundDecoration: BoxDecoration(
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(12.0)),
+                                    gradient: LinearGradient(
+                                      begin: Alignment.topCenter,
+                                      end: Alignment.bottomCenter,
+                                      colors: [
+                                        Colors.black.withOpacity(.0),
+                                        Colors.black.withOpacity(0.8),
+                                      ],
+                                    ),
+                                  ),
+                                  child: Container(
+                                    alignment: Alignment.center,
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image:
+                                            NetworkImage(details[index].image),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  height: 380,
+                                  width: 380,
+                                  alignment: Alignment.bottomLeft,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(left: 15),
+                                    child: Row(
+                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          details[index].title,
+                                          style: const TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 25,
+                                              fontWeight: FontWeight.w800),
+                                        ),
+                                        Expanded(
+                                          child: Row(
+                                            mainAxisAlignment: MainAxisAlignment.end,
+                                            children: [
+                                              const Icon(
+                                                CupertinoIcons.star_circle,
+                                                color: Colors.green,
+                                                size: 20,
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsets.only(right: 20),
+                                                child: Text(
+                                                  details[index].rating,
+                                                  style: const TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 15,
+                                                      fontWeight: FontWeight.w500),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+
+                                  ),
+                                ),
+
+                              ],
+                            );
+                          },
+                        ),
+                        ListView.builder(
+                          // pre book offers
+                          scrollDirection: Axis.horizontal,
+                          itemCount: details.length,
+                          itemBuilder: (context, index) {
+                            return Container(
+                              height: 300,
+                              color: Colors.white,
+                              child: Container(
+                                width: 380,
+                                margin: const EdgeInsets.all(5),
+                                foregroundDecoration: BoxDecoration(
+                                  borderRadius:
+                                      const BorderRadius.all(Radius.circular(12.0)),
+                                  gradient: LinearGradient(
+                                    begin: Alignment.topCenter,
+                                    end: Alignment.bottomCenter,
+                                    colors: [
+                                      Colors.black.withOpacity(.0),
+                                      Colors.black.withOpacity(0.8),
+                                    ],
+                                  ),
+                                ),
+                                // decoration: BoxDecoration(
+                                //   boxShadow: [
+                                //     BoxShadow(
+                                //       color: Colors.black.withOpacity(0.5), // Inner shadow color
+                                //       blurRadius: 7,
+                                //       offset: Offset(0, 3),
+                                //     ),
+                                //   ],
+                                // ),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: NetworkImage(details.reversed
+                                          .toList()[index]
+                                          .image),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                  child: Text(
+                                    details.reversed.toList()[index].title,
+                                    style: const TextStyle(
+                                        color: Colors.white, fontSize: 25),
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Text(
+                    "To Many restaurant to explore",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                   ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Container(
-                        width: size.width / 1.1,
-                        // Expand to fill the available width
-                        color: Colors.transparent,
-                        // Adjust color as needed
-                        child: CarouselSlider(
-                          items: [
-                            for (int index = 0;
-                                index < widget.hotel.length;
-                                index++)
-                              Container(
-                                width: size.width,
-                                // Adjust width of the carousel item
-                                child: Row(
-                                  children: [
-                                    const SizedBox(
-                                      width: 20,
-                                    ),
-                                  ],
+                  Container(
+                    width: size.width / 1.1,
+                    child: ListView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      itemCount: 4,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Card(
+                          child: Column(
+                            children: [
+                              CarouselSlider(
+                                items: hotledetails[index].image.map((i) {
+                                  return Builder(
+                                    builder: (BuildContext context) {
+                                      return Container(
+                                        width: size.width,
+                                        decoration: BoxDecoration(
+                                            image: DecorationImage(
+                                                image: NetworkImage(i),
+                                                fit: BoxFit.cover)),
+                                        // Adjust width of the carousel item
+                                        child: const Row(
+                                          children: [
+                                            SizedBox(
+                                              width: 20,
+                                            ),
+                                          ],
+                                        ),
+                                      );
+                                    },
+                                  );
+                                }).toList(),
+                                // [
+                                //   Container(
+                                //     width: size.width,
+                                //     decoration: BoxDecoration(
+                                //         image: DecorationImage(
+                                //             image: NetworkImage(
+                                //                 hotledetails[index].image[0]),
+                                //             fit: BoxFit.cover)),
+                                //     // Adjust width of the carousel item
+                                //     child: const Row(
+                                //       children: [
+                                //         SizedBox(
+                                //           width: 20,
+                                //         ),
+                                //       ],
+                                //     ),
+                                //   ),
+                                // ],
+                                options: CarouselOptions(
+                                  initialPage: activeIndex,
+                                  onPageChanged: (i, r) {
+                                    activeIndex = i;
+                                    setState(() {});
+                                  },
+                                  viewportFraction: 1,
+                                  height: size.height / 2.9,
+                                  // Adjust height of the carousel
+                                  autoPlay: true,
+                                  enlargeCenterPage: true,
                                 ),
-                              )
-                          ],
-                          options: CarouselOptions(
-                            initialPage: activeIndex,
-                            onPageChanged: (i, r) {
-                              activeIndex = i;
-                              setState(() {});
-                            },
-                            viewportFraction: 1,
-                            height: size.height / 2.9,
-                            // Adjust height of the carousel
-                            autoPlay: true,
-                            enlargeCenterPage: true,
+                              ),
+                              SizedBox(
+                                height: 200,
+                                child: Text(hotledetails[index].title),
+                              ),
+                            ],
                           ),
-                        ),
-                      ),
-                    ],
+                        );
+                      },
+                    ),
                   )
                 ],
               ),

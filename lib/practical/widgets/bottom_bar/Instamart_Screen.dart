@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-class Instamart_Screen extends StatefulWidget {
-  const Instamart_Screen({super.key});
+class Instamart extends StatefulWidget {
+  const Instamart({super.key});
 
   @override
-  State<Instamart_Screen> createState() => _Instamart_ScreenState();
+  State<Instamart> createState() => _InstamartState();
 }
 
-class _Instamart_ScreenState extends State<Instamart_Screen> {
+class _InstamartState extends State<Instamart> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow,
+      backgroundColor: Colors.red,
     );
   }
 }

@@ -7,6 +7,7 @@ import 'package:swiggy/practical/widgets/Third_Screen.dart';
 import 'package:swiggy/practical/widgets/Confirm_Details_Pages.dart';
 import 'package:swiggy/practical/widgets/Welcome_Pages.dart';
 import 'package:swiggy/practical/widgets/bottom_bar/Bottom_NavigationBar.dart';
+import 'package:swiggy/practical/widgets/bottom_bar/Dineout_Screen.dart';
 import 'package:swiggy/practical/widgets/bottom_bar/Food_Screen.dart';
 import 'package:swiggy/practical/widgets/bottom_bar/Genie_Screen.dart';
 import 'package:swiggy/practical/widgets/bottom_bar/Home_Screen.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return   MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Bottom_NavigationBar_Screen(),
 

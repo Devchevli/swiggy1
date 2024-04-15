@@ -19,11 +19,11 @@ class _Bottom_NavigationBar_ScreenState
   int activeindex = 0;
   int currentPageIndex = 0;
   List<Widget> screens = [
-    Home_Screen(),
-    Food_Screen(),
-    Instamart_Screen(),
+    const Home_Screen(),
+    const Food_Screen(),
+    const Instamart(),
     Dineout_Screen(),
-    Genie_Screen()
+    const GeniePage()
   ];
 
   Widget showScreens(int index) {
@@ -65,9 +65,9 @@ class _Bottom_NavigationBar_ScreenState
             label: 'Dineout',
           ),
           NavigationDestination(
-            selectedIcon: Icon(Icons.book_sharp),
-            icon: Icon(Icons.book_outlined),
-            label: 'Genie',
+            selectedIcon: Icon(Icons.settings_sharp),
+            icon: Icon(Icons.settings_outlined),
+            label: 'Setting',
           ),
         ],
       ),

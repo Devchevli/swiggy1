@@ -19,7 +19,6 @@ class AppImages {
       "https://b.zmtcdn.com/data/pictures/chains/9/3800929/5eccc92c862900b7655250cd8358bd13.jpg?fit=around|750:500&crop=750:500;*,*";
   static const Lays =
       "https://i.pinimg.com/originals/62/88/d0/6288d08f74f0826429bc77d875a9461e.png";
-  static const demo = "assets/images/food.png";
   static const Dishes =
       "https://media.istockphoto.com/id/174813048/photo/spoon-fork-and-table-knife-on-dinner-plate.jpg?s=170667a&w=0&k=20&c=FCv_h1EQf0CjYOpBXbavZAaD2peqJ0m8cSfQz2QP9Lk=";
   static const GiftBox = "https://static.vecteezy.com/system/resources/previews/014/301/042/original/3d-open-gift-box-surprise-give-as-a-gift-during-special-festival-png.png";
@@ -43,4 +42,20 @@ class AppImages {
   static const Uttapam = "https://cdn2.foodviva.com/static-content/food-images/south-indian-recipes/uttapam/uttapam.jpg";
   static const Omelet = "https://kristineskitchenblog.com/wp-content/uploads/2023/02/how-to-make-an-omelet-17.jpg";
   static const Upma = "https://www.thedeliciouscrescent.com/wp-content/uploads/2016/05/Vegetable-Upma-7.jpg";
+   static const Masala_Mania = "https://b.zmtcdn.com/data/reviews_photos/2c3/91a4ff576c23771bb7ac4ddad7cf12c3_1569707526.jpg";
+   static const Natures_plate = "https://lh3.googleusercontent.com/p/AF1QipNC5_1cJkghIxlT3kIVQHhGvwsfKLuEUxIlkt0K=s680-w680-h510";
+   static const coffee_king = "https://api.foodso.me/uploads/2ixkKBc3.jpg";
+   static const skydeck = "https://res.cloudinary.com/simplotel/image/upload/x_0,y_356,w_3406,h_1916,r_0,c_crop,q_80,fl_progressive/w_500,f_auto,c_fit/pride-hotel-rishikesh/Sky_Deck_a_cxpbig";
+   static const Masala_Mania2 = "https://www.spoton.com/blog/content/images/size/w1200/2023/08/Mocktail--zero-proof-cocktails--and-different-non-alcoholic-drinks.jpeg";
+   static const Masala_Mania3 = "https://maharajachaap.com/wp-content/uploads/2018/09/paneer-tikka.jpg";
+   static const Natures_plate2 = "https://b.zmtcdn.com/data/pictures/chains/7/20494957/a5b251c229a94bb39396e0b3e8cfe657.jpg";
+   static const Natures_plate3 = "https://b.zmtcdn.com/data/pictures/7/20494957/1f7fcb6395fa29c139b1ddddeb5af666.jpg?fit=around|960:500&crop=960:500;*,*";
+   static const Myconos = "https://im1.dineout.co.in/images/uploads/restaurant/sharpen/1/l/u/p117349-16856351356478c03f4091a.jpg?tr=tr:n-xlarge";
+   static const Myconos2 = "https://im1.dineout.co.in/images/uploads/restaurant/sharpen/1/v/j/p117349-1680688616642d45e8ba966.jpg?tr=tr:n-xlarge";
+   static const Myconos3 = "https://im1.dineout.co.in/images/uploads/restaurant/sharpen/1/c/e/p117349-1680688630642d45f69fd00.jpg?tr=tr:n-xlarge";
+   static const Myconos4 = "https://im1.dineout.co.in/images/uploads/restaurant/sharpen/1/s/z/p117349-16856351616478c05921922.jpg?tr=tr:n-xlarge";
+   static const Mr = "https://api.foodso.me/uploads/vz2yNnNw.jpg";
+   static const Mr2 = "https://foto2.sluurpy.com/locali/in/4487688/71007104.jpg";
+   static const Mr3 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP9w0PqX3ZLwh2AZh_LHO1WD2d8-w1KY9GyYDITsDJZg&s";
+   static const Mr4 = "https://images.jdmagicbox.com/comp/mangalore/g6/0824px824.x824.160707082912.r3g6/catalogue/kobe-sizzler-balmatta-mangalore-continental-restaurants-zzwppukk8d-250.jpeg?clr=";
 }

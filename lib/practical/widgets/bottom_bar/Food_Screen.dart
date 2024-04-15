@@ -402,6 +402,7 @@ class _Food_ScreenState extends State<Food_Screen> {
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
                                     dataList[index].restratype!,
@@ -413,7 +414,7 @@ class _Food_ScreenState extends State<Food_Screen> {
                                     dataList[index].title!,
                                     style: const TextStyle(
                                         color: Colors.black,
-                                        fontWeight: FontWeight.w600),
+                                        fontWeight: FontWeight.w800,fontSize: 23),
                                   ),
                                   Text(
                                     dataList[index].rating!,
