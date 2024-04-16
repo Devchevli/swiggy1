@@ -57,7 +57,7 @@ class _InstamartState extends State<Instamart> {
                     builder: (context) {
                       return const CartPage();
                     },
-                  ),
+                  )
                 );
               }, icon: const Icon(CupertinoIcons.shopping_cart,color: Colors.white,))
             ],
