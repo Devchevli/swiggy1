@@ -2,17 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'Constant_Variable.dart';
-import 'Third_Screen.dart';
 import 'Welcome_Pages.dart';
 
-class Confirm_Details_Pages extends StatefulWidget {
-  const Confirm_Details_Pages({super.key});
+class DetailsPages extends StatefulWidget {
+  const DetailsPages({super.key});
 
   @override
-  State<Confirm_Details_Pages> createState() => _Confirm_Details_PagesState();
+  State<DetailsPages> createState() => _DetailsPagesState();
 }
 
-class _Confirm_Details_PagesState extends State<Confirm_Details_Pages> {
+class _DetailsPagesState extends State<DetailsPages> {
   TextEditingController _username = TextEditingController();
   TextEditingController _email = TextEditingController();
   String error = "";
@@ -24,12 +23,12 @@ class _Confirm_Details_PagesState extends State<Confirm_Details_Pages> {
       resizeToAvoidBottomInset: false,
 
       body: Container(
-        padding: EdgeInsets.only(top: 70, left: 25, right: 25),
+        padding: const EdgeInsets.only(top: 70, left: 25, right: 25),
         height: size.height,
         width: size.width,
         color: Colors.white,
         child: Column(children: [
-          Text(
+          const Text(
             "Help us get to know you",
             style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
           ),
@@ -47,7 +46,7 @@ class _Confirm_Details_PagesState extends State<Confirm_Details_Pages> {
                   labelText: "Name",
                   labelStyle: const TextStyle(
                       color: Colors.deepOrange,
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w400,
                       fontSize: 20),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
@@ -78,7 +77,7 @@ class _Confirm_Details_PagesState extends State<Confirm_Details_Pages> {
                   labelText: "E-mail",
                   labelStyle: const TextStyle(
                       color: Colors.deepOrange,
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w400,
                       fontSize: 20),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
@@ -112,7 +111,7 @@ class _Confirm_Details_PagesState extends State<Confirm_Details_Pages> {
                           context,
                           MaterialPageRoute(
                             builder: (context) =>
-                            const Welcome_Page(),
+                            const WelcomePage(),
                           ));
                     });
                     SharedPreferences pref =
@@ -128,7 +127,7 @@ class _Confirm_Details_PagesState extends State<Confirm_Details_Pages> {
                         MaterialStateProperty.all(Colors.deepOrange),
                     fixedSize: MaterialStateProperty.all(const Size(400, 45))),
                 child:
-                    const Text("Get Started", style: TextStyle(fontSize: 17)),
+                    const Text("Get Started", style: TextStyle(fontSize: 20,color: Colors.black)),
               ),
             ],
           )

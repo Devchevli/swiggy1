@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 import 'OTP_Screen.dart';
 
-class Third_Screen extends StatefulWidget {
-  const Third_Screen({super.key});
+class MobileNumber extends StatefulWidget {
+  const MobileNumber({super.key});
 
   @override
-  State<Third_Screen> createState() => _Third_ScreenState();
+  State<MobileNumber> createState() => _MobileNumberState();
 }
 
-class _Third_ScreenState extends State<Third_Screen> {
+class _MobileNumberState extends State<MobileNumber> {
   int navigate=10;
   @override
   Widget build(BuildContext context) {
@@ -44,13 +44,13 @@ class _Third_ScreenState extends State<Third_Screen> {
             cursorColor: Colors.black54,
             style: const TextStyle(fontWeight: FontWeight.w400),
             decoration: InputDecoration(
-              prefix: Text("+91   |     ",
+              prefix: const Text("+91   |     ",
                   style: TextStyle(fontWeight: FontWeight.w600)),
               border: InputBorder.none,
               labelText: "Mobile Number",
               labelStyle: const TextStyle(
                   color: Colors.deepOrange,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w400,
                   fontSize: 20),
               enabledBorder:OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
@@ -71,11 +71,11 @@ class _Third_ScreenState extends State<Third_Screen> {
             height: 25,
           ),
           ElevatedButton(
-            onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=> OTP_Screen() ));},
+            onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=> OtpScreen() ));},
             style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.deepOrange),
                 fixedSize: MaterialStateProperty.all(const Size(400, 45))),
-            child: const Text("Get OTP", style: TextStyle(fontSize: 17)),
+            child: const Text("Get OTP", style: TextStyle(fontSize: 20,color: Colors.black)),
           ),
           const SizedBox(
             height: 25,

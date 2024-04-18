@@ -29,7 +29,7 @@ List<HotelList> hotledetails = [
       title: "Masala_Mania",
       rating: "4.0",
       type: "Chiness-North Indian",
-      rupees: "1500 for two",
+      rupees: "₹ 1500 for two",
       location: "Aagman Vivianna, Vesu, Surat",
       flatoff: "Flat 40% off on pre-booking"),
   HotelList(
@@ -41,7 +41,7 @@ List<HotelList> hotledetails = [
       title: "Nature's_plate",
       rating: "4.6",
       type: "Continental-Italian",
-      rupees: "800 for two",
+      rupees: "₹ 800 for two",
       location: "Vesu, Surat",
       flatoff: "Flat 15% off on walk-in"),
   HotelList(
@@ -52,9 +52,9 @@ List<HotelList> hotledetails = [
         AppImages.Myconos4
       ],
       title: "Myconos",
-      rating: "4.4",
+      rating: "4.9",
       type: "Finger Food.Fast Food",
-      rupees: "700 for two",
+      rupees: "₹ 700 for two",
       location: "Subh Universal, Vesu, Surat",
       flatoff: "Flat 35% off on pre-booking"),
   HotelList(
@@ -65,9 +65,9 @@ List<HotelList> hotledetails = [
         AppImages.Mr4,
       ],
       title: "Mr cafe",
-      rating: "4.6",
+      rating: "4.7",
       type: "Finger Food.Fast Food",
-      rupees: "100 for three",
+      rupees: "₹ 100 for three",
       location: "Subh Universal, Vesu, Surat",
       flatoff: "Flat 35% off on pre-booking"),
 ];

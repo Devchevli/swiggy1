@@ -421,7 +421,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                 Container(
                   height: 500,
                   width: size.width,
-                  child: Image.network(AppImages.GiftBox,fit: BoxFit.fitWidth,),
+                  child: Image.network(AppImages.del,fit: BoxFit.fitWidth,),
                 )
               ],
             ),

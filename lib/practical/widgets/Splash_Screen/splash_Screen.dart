@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
 import '../../../view/utils/config/app_images.dart';
-import '../second_Screen.dart';
+import '../Get_start.dart';
 
-class Splash_Screen extends StatefulWidget {
-  const Splash_Screen({super.key});
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
 
   @override
-  State<Splash_Screen> createState() => _Splash_ScreenState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _Splash_ScreenState extends State<Splash_Screen> {
+class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-  Future.delayed(Duration(seconds: 3),(){
-      Navigator.push(context, MaterialPageRoute(builder: (context)=> const Second_Screen()));
+  Future.delayed(const Duration(seconds: 3),(){
+      Navigator.push(context, MaterialPageRoute(builder: (context)=> const GetStarted()));
   });
     super.initState();
   }
@@ -25,7 +25,7 @@ class _Splash_ScreenState extends State<Splash_Screen> {
       backgroundColor: Colors.white,
       body: Container(
         alignment: Alignment.center,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: NetworkImage(AppImages.logo)
           )

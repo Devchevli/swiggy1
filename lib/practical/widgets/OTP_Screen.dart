@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/style.dart';
 
-import 'Confirm_Details_Pages.dart';
+import 'Details_pages.dart';
 
-class OTP_Screen extends StatefulWidget {
-  const OTP_Screen({super.key});
+class OtpScreen extends StatefulWidget {
+  const OtpScreen({super.key});
 
   @override
-  State<OTP_Screen> createState() => _OTP_ScreenState();
+  State<OtpScreen> createState() => _OtpScreenState();
 }
 
-class _OTP_ScreenState extends State<OTP_Screen> {
+class _OtpScreenState extends State<OtpScreen> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -53,11 +53,11 @@ class _OTP_ScreenState extends State<OTP_Screen> {
             height: 35,
           ),
           ElevatedButton(
-            onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=> const Confirm_Details_Pages() ));},
+            onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=> const DetailsPages() ));},
             style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.deepOrange),
                 fixedSize: MaterialStateProperty.all(const Size(400, 45))),
-            child: const Text("Get OTP", style: TextStyle(fontSize: 17)),
+            child: const Text("Get OTP", style: TextStyle(fontSize: 20,color: Colors.black)),
           ),
           const SizedBox(
             height: 35,

@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:swiggy/view/utils/config/app_images.dart';
 
-import 'Confirm_Details_Pages.dart';
 import 'bottom_bar/Bottom_NavigationBar.dart';
 
-class Location_page extends StatefulWidget {
-  const Location_page({super.key});
+class LocationPage extends StatefulWidget {
+  const LocationPage({super.key});
 
   @override
-  State<Location_page> createState() => _Location_pageState();
+  State<LocationPage> createState() => _LocationPageState();
 }
 
-class _Location_pageState extends State<Location_page> {
+class _LocationPageState extends State<LocationPage> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -46,7 +45,7 @@ class _Location_pageState extends State<Location_page> {
                 fit: BoxFit.cover,
               )),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             ElevatedButton(
@@ -60,7 +59,7 @@ class _Location_pageState extends State<Location_page> {
                   backgroundColor: MaterialStateProperty.all(Colors.deepOrange),
                   fixedSize: MaterialStateProperty.all(const Size(400, 45))),
               child: const Text("Allow Location Access",
-                  style: TextStyle(fontSize: 17)),
+                  style: TextStyle(fontSize: 20,color: Colors.black)),
             ),
             const SizedBox(
               height: 10,

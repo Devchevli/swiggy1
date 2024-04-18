@@ -1,14 +1,16 @@
 import 'dart:convert';
 import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' as rootBundle;
 import 'package:swiggy/models/Dishes_Model.dart';
 import 'package:swiggy/practical/widgets/Constant_Variable.dart';
+import 'package:swiggy/practical/widgets/bottom_bar/food_sceen/widgets/to_many_restraunt.dart';
 import 'package:swiggy/view/utils/config/app_images.dart';
-import 'package:swiggy/view/utils/widgets/common_widgets/list_view_model.dart';
 
-import '../../../models/modelData.dart';
+import '../../../../models/modelData.dart';
+
 
 class Food_Screen extends StatefulWidget {
   const Food_Screen({super.key});
@@ -18,6 +20,7 @@ class Food_Screen extends StatefulWidget {
 }
 
 class _Food_ScreenState extends State<Food_Screen> {
+
   List<ModelData> dataList = [];
 
   @override
@@ -29,7 +32,7 @@ class _Food_ScreenState extends State<Food_Screen> {
   Future<void> loadData() async {
     try {
       String jsonString =
-          await rootBundle.rootBundle.loadString("jsonData/data.json");
+      await rootBundle.rootBundle.loadString("jsonData/data.json");
       List<dynamic> jsonList = json.decode(jsonString);
       setState(() {
         dataList = jsonList.map((json) => ModelData.fromJson(json)).toList();
@@ -154,11 +157,11 @@ class _Food_ScreenState extends State<Food_Screen> {
                       scrollDirection: Axis.horizontal,
                       itemCount: DishesPic.length,
                       gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 2,
-                              mainAxisSpacing: 0,
-                              crossAxisSpacing: 8,
-                              childAspectRatio: .9),
+                      const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          mainAxisSpacing: 0,
+                          crossAxisSpacing: 8,
+                          childAspectRatio: .9),
                       itemBuilder: (BuildContext context, int index) {
                         return Padding(
                           padding: const EdgeInsets.only(left: 20),
@@ -191,11 +194,11 @@ class _Food_ScreenState extends State<Food_Screen> {
                       labelColor: Colors.black,
                       indicatorSize: TabBarIndicatorSize.tab,
                       indicatorPadding:
-                          const EdgeInsets.symmetric(horizontal: 10),
+                      const EdgeInsets.symmetric(horizontal: 10),
                       indicator: BoxDecoration(
                         border: Border.all(),
                         borderRadius:
-                            const BorderRadius.all(Radius.circular(25)),
+                        const BorderRadius.all(Radius.circular(25)),
                       ),
                       isScrollable: true,
                       tabs: [
@@ -204,8 +207,8 @@ class _Food_ScreenState extends State<Food_Screen> {
                           width: size.width / 4,
                           decoration: BoxDecoration(
                               border: Border.all(
-                            color: Colors.transparent,
-                          )),
+                                color: Colors.transparent,
+                              )),
                           child: const Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -221,8 +224,8 @@ class _Food_ScreenState extends State<Food_Screen> {
                           width: size.width / 5,
                           decoration: BoxDecoration(
                               border: Border.all(
-                            color: Colors.transparent,
-                          )),
+                                color: Colors.transparent,
+                              )),
                           child: Row(
                             children: [
                               InkWell(
@@ -303,8 +306,8 @@ class _Food_ScreenState extends State<Food_Screen> {
                           width: size.width / 4,
                           decoration: BoxDecoration(
                               border: Border.all(
-                            color: Colors.transparent,
-                          )),
+                                color: Colors.transparent,
+                              )),
                           child: const Tab(
                             text: "Fast Delivery",
                           ),
@@ -321,138 +324,37 @@ class _Food_ScreenState extends State<Food_Screen> {
                           width: size.width / 3.5,
                           decoration: BoxDecoration(
                               border: Border.all(
-                            color: Colors.transparent,
-                          )),
+                                color: Colors.transparent,
+                              )),
                           child: const Tab(
                             text: "New on Swiggy",
                           ),
                         ),
                       ]),
+                  manyrestraunt(context,dataList),
+
                   SizedBox(
                     height: size.height / 50,
-                  )
+                  ),
+
                 ],
               ),
-              const Padding(
-                padding: EdgeInsets.only(left: 20),
-                child: Align(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    "To many restaurant to explore",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w500, //
-                        fontSize: 20),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 20),
-                child: ListView.builder(
-                  physics: NeverScrollableScrollPhysics(),
-                  itemCount: dataList.length,
-                  shrinkWrap: true,
-                  itemBuilder: (BuildContext context, int index) {
-                    if (index < dataList.length) {
-                      return Padding(
-                        padding: const EdgeInsets.only(bottom: 10),
-                        child: Row(
-                          children: [
-                            Container(
-                              height: size.height / 4.9,
-                              width: size.width / 2.7,
-                              decoration: BoxDecoration(
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey,
-                                    blurRadius: 20,
-                                  ),
-                                ],
-                                image: DecorationImage(
-                                    image: NetworkImage(
-                                      dataList[index].image!,
-                                    ),
-                                    opacity: .8,
-                                    fit: BoxFit.cover),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 2, bottom: 5),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    Text(
-                                      dataList[index].discount!,
-                                      style: const TextStyle(
-                                          fontSize: 23,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.white),
-                                    ),
-                                    Text(
-                                      dataList[index].upto!,
-                                      style: const TextStyle(
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.w800,
-                                          color: Colors.white70),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    dataList[index].restratype!,
-                                    style: const TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w600),
-                                  ),
-                                  Container(
-                                    width: 220,
-                                    child: Text(
-                                      dataList[index].title!,
-                                      overflow: TextOverflow.ellipsis,
-                                      style: const TextStyle(
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.w800,
-                                          fontSize: 23),
-                                    ),
-                                  ),
-                                  Text(
-                                    dataList[index].rating!,
-                                    style: const TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w600),
-                                  ),
-                                  Text(
-                                    dataList[index].items!,
-                                    style: const TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w600),
-                                  ),
-                                  Text(
-                                    dataList[index].location!,
-                                    style: const TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w600),
-                                  ),
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
-                      );
-                    } else {
-                      return Container();
-                    }
-                  },
-                ),
-              ),
+              // const Padding(
+              //   padding: EdgeInsets.only(left: 20),
+              //   child: Align(
+              //     alignment: Alignment.topLeft,
+              //     child: Text(
+              //       "To many restaurant to explore",
+              //       style: TextStyle(
+              //           color: Colors.black,
+              //           fontWeight: FontWeight.w500, //
+              //           fontSize: 20),
+              //     ),
+              //
+              //   ),
+              //
+              // ),
+
             ],
           ),
         ),

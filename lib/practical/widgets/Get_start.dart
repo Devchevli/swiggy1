@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:swiggy/view/utils/config/app_images.dart';
 
-import 'Third_Screen.dart';
+import 'Mobile_Screen.dart';
 
-class Second_Screen extends StatefulWidget {
-  const Second_Screen({super.key});
+class GetStarted extends StatefulWidget {
+  const GetStarted({super.key});
 
   @override
-  State<Second_Screen> createState() => _Second_ScreenState();
+  State<GetStarted> createState() => _GetStartedState();
 }
 
-class _Second_ScreenState extends State<Second_Screen> {
+class _GetStartedState extends State<GetStarted> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -103,14 +103,14 @@ class _Second_ScreenState extends State<Second_Screen> {
               const SizedBox(height: 15),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Third_Screen()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>MobileNumber()));
                 },
                 style: ButtonStyle(
                     backgroundColor:
                         MaterialStateProperty.all(Colors.deepOrange),
                     fixedSize: MaterialStateProperty.all(const Size(400, 45))),
                 child:
-                    const Text("Get Started", style: TextStyle(fontSize: 17)),
+                    const Text("Get Started", style: TextStyle(fontSize: 20,color: Colors.black)),
               ),
             ],
           ),

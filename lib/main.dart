@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:swiggy/models/CartModel.dart';
 import 'package:swiggy/practical/widgets/Constant_Variable.dart';
-import 'package:swiggy/practical/widgets/bottom_bar/Bottom_NavigationBar.dart';
+import 'package:swiggy/practical/widgets/Splash_Screen/splash_Screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       create: (BuildContext context) => CartModel(),
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Bottom_NavigationBar_Screen(),
+        home: SplashScreen(),
       ),
     );
   }

@@ -1,10 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:swiggy/practical/widgets/bottom_bar/dineout_screen/Dineout_Screen.dart';
-import 'package:swiggy/practical/widgets/bottom_bar/Food_Screen.dart';
 import 'package:swiggy/practical/widgets/bottom_bar/Genie_Screen.dart';
 import 'package:swiggy/practical/widgets/bottom_bar/Home_Screen.dart';
 import 'package:swiggy/practical/widgets/bottom_bar/Instamart_Screen.dart';
+import 'package:swiggy/practical/widgets/bottom_bar/dineout_screen/Dineout_Screen.dart';
+
+import 'food_sceen/Food_Screen.dart';
 
 class Bottom_NavigationBar_Screen extends StatefulWidget {
   const Bottom_NavigationBar_Screen({super.key});

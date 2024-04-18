@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:swiggy/practical/widgets/bottom_bar/dineout_screen/widget/explore_resturant_list.dart';
 import 'package:swiggy/practical/widgets/bottom_bar/dineout_screen/widget/prebooking_offer.dart';
 import 'package:swiggy/practical/widgets/bottom_bar/dineout_screen/widget/trending_list_view.dart';
-import 'package:swiggy/view/utils/widgets/common_widgets/carousal_list.dart';
-import 'package:swiggy/view/utils/widgets/common_widgets/list_view_model.dart';
+
 import '../../../../view/utils/config/app_images.dart';
 
 class DineOutScreen extends StatefulWidget {

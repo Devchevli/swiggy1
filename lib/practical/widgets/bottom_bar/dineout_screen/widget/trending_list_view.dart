@@ -1,7 +1,6 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 
 import '../../../../../view/utils/widgets/common_widgets/list_view_model.dart';
 
@@ -35,7 +34,7 @@ Widget trendingListview() {
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: NetworkImage(details[index].image),
+                  image: NetworkImage(details.reversed.toList()[index].image),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -136,9 +135,28 @@ Widget trendingListview() {
           Positioned(
             bottom: 10,
             child: Container(
-              height: 40,
-              color: Colors.pink,
-              width: 300,
+              height: 35,
+              width: 360,
+              decoration: BoxDecoration(
+                color: Colors.green.shade800,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+
+                  const SizedBox(
+                    width: 5,
+                  ),
+                  Text(
+                    details[index].flatoff,
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
@@ -146,3 +164,6 @@ Widget trendingListview() {
     },
   );
 }
+
+
+//details[index].location,
