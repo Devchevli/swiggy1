@@ -137,8 +137,8 @@ Widget trendingListview() {
             bottom: 10,
             child: Container(
               height: 40,
-              color: Colors.pink,
-              width: 300,
+              color: Colors.green,
+              width: 350,
             ),
           ),
         ],
