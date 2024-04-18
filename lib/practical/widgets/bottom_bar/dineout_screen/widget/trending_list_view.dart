@@ -136,9 +136,28 @@ Widget trendingListview() {
           Positioned(
             bottom: 10,
             child: Container(
-              height: 40,
-              color: Colors.pink,
-              width: 300,
+              height: 35,
+              width: 360,
+              decoration: BoxDecoration(
+                color: Colors.green.shade800,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Text(
+                    details[index].flatoff,
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
