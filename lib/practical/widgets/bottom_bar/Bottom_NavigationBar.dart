@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:swiggy/practical/widgets/bottom_bar/Dineout_Screen.dart';
+import 'package:swiggy/practical/widgets/bottom_bar/dineout_screen/Dineout_Screen.dart';
 import 'package:swiggy/practical/widgets/bottom_bar/Food_Screen.dart';
 import 'package:swiggy/practical/widgets/bottom_bar/Genie_Screen.dart';
 import 'package:swiggy/practical/widgets/bottom_bar/Home_Screen.dart';
@@ -22,7 +22,7 @@ class _Bottom_NavigationBar_ScreenState
     const Home_Screen(),
     const Food_Screen(),
     const Instamart(),
-    Dineout_Screen(),
+    DineOutScreen(),
     const GeniePage()
   ];
 
