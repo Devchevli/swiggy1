@@ -30,7 +30,7 @@ List<Restaurant> details = [
       type: "Chiness-North Indian",
       rupees: "₹ 1500 for two",
       location: "Aagman Vivianna, Vesu, Surat",
-      flatoff: "Flat 40% off on pre-booking", km: "0.3"),
+      flatoff: "Flat 40% off on pre-booking", km: "1.5"),
   Restaurant(
       image: AppImages.Natures_plate,
       title: "Nature's Plate",
@@ -46,7 +46,7 @@ List<Restaurant> details = [
       type: "Finger Food.Fast Food",
       rupees: "₹ 700 for two",
       location: "Subh Universal, Vesu, Surat",
-      flatoff: "Flat 35% off on pre-booking", km: "0.3"),
+      flatoff: "Flat 35% off on pre-booking", km: "1.8"),
   Restaurant(
       image: AppImages.skydeck,
       title: "Skydeck         ",
@@ -54,5 +54,5 @@ List<Restaurant> details = [
       type: "Finger Food.Fast Food",
       rupees: "₹ 100 for three",
       location: "Subh Universal, Vesu, Surat",
-      flatoff: "Flat 35% off on pre-booking", km: "0.3"),
+      flatoff: "Flat 35% off on pre-booking", km: "0.4"),
 ];
