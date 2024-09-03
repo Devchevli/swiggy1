@@ -64,7 +64,7 @@ class CartPage extends StatelessWidget {
                               style: const TextStyle(fontSize: 18),
                             ),
                             subtitle: Text(
-                              '\$' + value.cartItems[index][1],
+                              '\₹' + value.cartItems[index][1],
                               style: const TextStyle(fontSize: 12),
                             ),
                             trailing: IconButton(
@@ -105,7 +105,7 @@ class CartPage extends StatelessWidget {
                           const SizedBox(height: 8),
                           // total price
                           Text(
-                            '\$${value.calculateTotal()}',
+                            '\₹${value.calculateTotal()}',
                             style: const TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,

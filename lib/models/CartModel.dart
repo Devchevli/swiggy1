@@ -7,8 +7,8 @@ class CartModel extends ChangeNotifier {
     // [ itemName, itemPrice, imagePath, color ]
     ["Oreo", "10", AppImages.oreo, Colors.green],
       ["Flour", "250", AppImages.chakkifresh, Colors.yellow],
-    ["Chicken", "220",AppImages.fortune , Colors.brown],
-    ["Sugar", "1.00",AppImages.sugar , Colors.blue],
+    ["Oil", "140",AppImages.fortune , Colors.brown],
+    ["Sugar", "250",AppImages.sugar , Colors.blue],
   ];
 
   // list of cart items

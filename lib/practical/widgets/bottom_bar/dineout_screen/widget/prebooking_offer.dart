@@ -145,9 +145,6 @@ Widget preBookOffer() {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
 
-                  SizedBox(
-                    width: 5,
-                  ),
                   Text(
                     details.reversed.toList()[index].flatoff,
                     style: const TextStyle(

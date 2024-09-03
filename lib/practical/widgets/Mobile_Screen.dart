@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import 'OTP_Screen.dart';
@@ -10,7 +12,13 @@ class MobileNumber extends StatefulWidget {
 }
 
 class _MobileNumberState extends State<MobileNumber> {
-  int navigate=10;
+  TextEditingController phoneController = TextEditingController();
+
+  @override
+  void initState() {
+    Firebase.initializeApp();
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -38,6 +46,7 @@ class _MobileNumberState extends State<MobileNumber> {
             height: 25,
           ),
           TextField(
+            controller: phoneController,
             keyboardType: TextInputType.number,
             maxLength: 10,
             onTap: () {},
@@ -52,10 +61,9 @@ class _MobileNumberState extends State<MobileNumber> {
                   color: Colors.deepOrange,
                   fontWeight: FontWeight.w400,
                   fontSize: 20),
-              enabledBorder:OutlineInputBorder(
+              enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
-                borderSide:
-                const BorderSide(color: Colors.deepOrangeAccent),
+                borderSide: const BorderSide(color: Colors.deepOrangeAccent),
               ),
               hintText: 'Enter your phone number',
               focusedBorder: OutlineInputBorder(
@@ -71,11 +79,24 @@ class _MobileNumberState extends State<MobileNumber> {
             height: 25,
           ),
           ElevatedButton(
-            onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=> OtpScreen() ));},
+            onPressed: () async {
+              print("phoneController.text ${phoneController.text}");
+              await FirebaseAuth.instance.verifyPhoneNumber(
+                  verificationCompleted: (PhoneAuthCredential credential) {},
+                  verificationFailed: (FirebaseAuthException ex) {},
+                  codeSent: (String verificationid, int? resendtoken) {
+
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => OtpScreen(verificationid: verificationid, phoneNumber: "+91${phoneController.text.toString()}",)));
+                  },
+                  codeAutoRetrievalTimeout: (String verificationId) {},
+                  phoneNumber: "+91${phoneController.text.toString()}");
+            },
             style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.deepOrange),
                 fixedSize: MaterialStateProperty.all(const Size(400, 45))),
-            child: const Text("Get OTP", style: TextStyle(fontSize: 20,color: Colors.black)),
+            child: const Text("Get OTP",
+                style: TextStyle(fontSize: 20, color: Colors.black)),
           ),
           const SizedBox(
             height: 25,
